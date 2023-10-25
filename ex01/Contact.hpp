@@ -6,6 +6,7 @@ private:
     std::string phoneNumber;
 
 public:
+    Contact();
     Contact(const std::string& name, const std::string& phoneNumber);
     std::string getName() const;
     std::string getPhoneNumber() const;
