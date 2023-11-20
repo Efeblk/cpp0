@@ -1,9 +1,17 @@
 #include <iostream>
-#include "Contact.hpp"
 #include "PhoneBook.hpp"
-
-int main(int argc, const char** argv) {
-
-    PhoneBook phoneBook;    
+   
+int main(void) {
+    PhoneBook book;
+    std::string input = "";
+    while (input.compare("EXIT")) {
+        if (input.compare("ADD") == 0)
+            book.addContact();
+        else if (input.compare("SEARCH") == 0) {
+            book.searchContact(input);
+        }
+        std::cout << "> " << std::flush;
+        std::getline(std::cin, input);
+    }
     return 0;
 }

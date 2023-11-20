@@ -1,4 +1,8 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
+#include <iostream>
 
 class PhoneBook
 {
@@ -8,6 +12,8 @@ private:
     int contact_count;
 public:
     PhoneBook();
-    int addContact(const Contact& newContact);
-    int searchContact(const Contact& Contact);
+    void addContact();
+    int searchContact(std::string searchContact);
 };
+
+#endif

@@ -5,11 +5,12 @@ Contact::Contact(){
     phoneNumber = "";
 }
 
-Contact::Contact(const std::string& name, const std::string& phoneNumber) {
-    this->name = name;
-    this->phoneNumber = phoneNumber;
+void Contact::init() {
+    std::cout << "name: " << std::endl;
+    std::getline(std::cin, this->name);
+    std::cout << "phone number" << std::endl;
+    std::getline(std::cin, this->phoneNumber);
 }
-
 std::string Contact::getName() const {
     return name;
 }

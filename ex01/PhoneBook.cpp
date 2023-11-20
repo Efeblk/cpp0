@@ -5,20 +5,17 @@ PhoneBook::PhoneBook()
     contact_count = 0;
 }
 
-int PhoneBook::addContact(const Contact& newContact){
-    if (contact_count < MAX_CONTACTS) {
-        contacts[contact_count] = newContact;
-        contact_count++;
-        return 0;
-    } 
-    else {
-        return -1;
+void PhoneBook::addContact(){
+    if(this->contact_count < MAX_CONTACTS){
+        contact_count = 0;
     }
+    contacts[contact_count].init();
+    contact_count++;
 }
 
-int PhoneBook::searchContact(const Contact& searchContact) {
+int PhoneBook::searchContact(std::string searchContact) {
     for (int i = 0; i < contact_count; i++) {
-        if (contacts[i].getName() == searchContact.getName() && contacts[i].getPhoneNumber() == searchContact.getPhoneNumber()) {
+        if (contacts[i].getName() == searchContact) {
             return i;
         }
     }
