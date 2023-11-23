@@ -40,3 +40,15 @@ std::string Contact::getName() const {
 std::string Contact::getPhoneNumber() const {
     return phoneNumber;
 }
+
+std::string Contact::getLastName() const {
+    return lastName;
+}
+
+std::string Contact::getNickName() const {
+    return nickName;
+}
+
+std::string Contact::getDarkest() const {
+    return darkestSecret;
+}
