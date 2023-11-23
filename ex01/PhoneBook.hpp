@@ -14,6 +14,7 @@ public:
     PhoneBook();
     void addContact();
     int searchContact(std::string searchContact);
+    std::string printer(std::string str) const;
 };
 
 #endif

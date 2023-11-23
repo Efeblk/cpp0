@@ -1,2 +1,2 @@
 all:
-	g++ *.cpp
+	g++ -std=c++98 *.cpp
