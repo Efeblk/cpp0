@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <iomanip>
 
 PhoneBook::PhoneBook() 
 {
@@ -20,12 +21,15 @@ std::string PhoneBook::printer(std::string str) const {
 }
 
 int PhoneBook::searchContact(std::string searchContact) {
-    std::cout << "index     " << "first name" << "last name " << "nickname" << std::endl;
+    std::cout << std::left << std::setw(10) << "index" << std::setw(10) << "first name" << std::setw(10) << "last name" << std::setw(10) << "nickname" << std::endl;
+
     for (int i = 0; i < this->MAX_CONTACTS; i++) {
         if (!contacts[i].getName().empty()) {
-            char output[43];
-            snprintf(output, sizeof(output), "%-10d|%-10s|%-10s|%-10s", i, this->printer(contacts[i].getName()).c_str(), this->printer(contacts[i].getLastName()).c_str(), this->printer(contacts[i].getNickName()).c_str());
-            std::cout << output << std::endl;
+            std::cout << std::left << std::setw(10) << i
+                      << std::left << std::setw(10) << this->printer(contacts[i].getName())
+                      << std::left << std::setw(10) << this->printer(contacts[i].getLastName())
+                      << std::left << std::setw(10) << this->printer(contacts[i].getNickName())
+                      << std::endl;
         }
     }
 
@@ -36,3 +40,4 @@ int PhoneBook::searchContact(std::string searchContact) {
     }
     return -1;
 }
+
