@@ -13,7 +13,7 @@ private:
 public:
     PhoneBook();
     void addContact();
-    int searchContact(std::string searchContact);
+    int searchContact();
     std::string printer(std::string str) const;
 };
 

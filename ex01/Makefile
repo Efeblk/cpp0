@@ -1,2 +1,2 @@
 all:
-	g++ -std=c++98 *.cpp
+	g++ -Wall -Werror -Wextra -std=c++98 *.cpp

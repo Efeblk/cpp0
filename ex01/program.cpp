@@ -8,7 +8,7 @@ int main(void) {
         if (input.compare("ADD") == 0)
             book.addContact();
         else if (input.compare("SEARCH") == 0) {
-            book.searchContact(input);
+            book.searchContact();
         }
         std::cout << "> " << std::flush;
         std::getline(std::cin, input);
