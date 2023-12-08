@@ -33,10 +33,18 @@ int PhoneBook::searchContact() {
         }
     }
     int index;
+    index = -1;
+    std::string index_str;
     std::cout << "Please enter the contact index: " << std::endl;
-    std::cin >> index;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (std::cin.good() && (index >= 0 && index <= 7))
+    std::getline(std::cin, index_str);
+    try {
+        index = std::stoi(index_str);
+    } catch (std::invalid_argument const &e) {
+        std::cout << "Invalid input. Please enter an integer: " << std::endl;
+    } catch (std::out_of_range const &e) {
+        std::cout << "Integer out of range. Please enter a valid integer: " << std::endl;
+    }
+    if ((index >= 0 && index <= 7))
     {
         std::cout << "Name: " << this->contacts[index].getName() << std::endl;
         std::cout << "Surname: " << this->contacts[index].getLastName() << std::endl;
@@ -44,10 +52,9 @@ int PhoneBook::searchContact() {
         std::cout << "Phone Number: "<< this->contacts[index].getPhoneNumber() << std::endl;
         std::cout << "Darkest Secret: " << this->contacts[index].getDarkest() << std::endl;
     }
-    else
+    else if (index != -1)
     {
         std::cout << "wrong index range" << std::endl;
-        std::cin.clear();
     }
     return -1;
 }
